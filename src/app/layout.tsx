@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import PersonalInfo from "@/components/personal-info";
+import Navbar from "@/components/navbar";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
+const outfit = Outfit({subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Muhammad Riwandi - Software Engineer",
@@ -22,13 +19,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} font-poppins antialiased bg-stone-50`}
+        className={`${outfit.className} antialiased bg-zinc-900 text-zinc-100`}
       >
+        <div className="flex justify-center mt-5">
+          <Navbar />
+        </div>
         <main className="flex lg:flex-row flex-col gap-20 justify-center m-20 items-stretch">
-          <aside className="sticky top-20 max-h-full h-full mb-0 bg-white lg:basis-1/4 md:basis-full rounded-2xl shadow-xl">
+          <aside className="sticky top-20 max-h-full h-full mb-0 bg-zinc-800 lg:basis-1/4 md:basis-full rounded-2xl">
             <PersonalInfo />
           </aside>
-          <div className="lg:basis-3/4 md:basis-full m-0 relative bg-white rounded-2xl shadow-xl">
+          <div className="lg:basis-3/4 md:basis-full">
             {children}
           </div>
         </main>
