@@ -1,52 +1,30 @@
 'use client'
 import Image from 'next/image'
-import { useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import constants from '@/constants/main'
 
-const INITIAL_MENU = [
-  {
-    icon: 'https://img.icons8.com/?size=100&id=2797&format=png&color=F0F0F0',
-    title: 'Home',
-    link: '/',
-    isSelected: true
-  },
-  {
-    icon: 'https://img.icons8.com/?size=100&id=74359&format=png&color=F0F0F0',
-    title: 'Projects',
-    link: '/projects',
-    isSelected: false
-  },
-  {
-    icon: 'https://img.icons8.com/?size=100&id=35066&format=png&color=F0F0F0',
-    title: 'Tools',
-    link: '/tools',
-    isSelected: false
-  },
-  {
-    icon: 'https://img.icons8.com/?size=100&id=9489&format=png&color=F0F0F0',
-    title: 'Experience',
-    link: '/experience',
-    isSelected: false
-  },
-  {
-    icon: 'https://img.icons8.com/?size=100&id=63490&format=png&color=F0F0F0',
-    title: 'Contact',
-    link: '/contact',
-    isSelected: false
-  }
-]
+const INITIAL_MENU = constants.menus
 
 export default function Navbar () {
+  const router = useRouter()
+  const pathname = usePathname()
   const [menu, setMenu] = useState(INITIAL_MENU)
-  const setSelectedMenu = (title: string) => {
+
+  useEffect(() => {
     const updatedMenu = menu.map(m => ({
       ...m,
-      isSelected: m.title === title
+      isSelected: m.link === pathname
     }))
     setMenu(updatedMenu)
+  }, [pathname])
+
+  const setSelectedMenu = (link: string) => {
+    router.push(link)
   }
 
-  const isMenuSelected = (title: string) => {
-    return menu.find(m => m.title === title)?.isSelected
+  const isMenuSelected = (link: string) => {
+    return pathname === link
   }
 
   return (
@@ -55,10 +33,10 @@ export default function Navbar () {
         return (
           <button
             className={`flex h-8 w-8 rounded-md px-2 justify-center items-center transition-all duration-300 ease-in-out hover:bg-zinc-700 ${
-              isMenuSelected(m.title) ? 'bg-blue-600 font-bold' : ''
+              isMenuSelected(m.link) ? 'bg-blue-600 font-bold' : ''
             }`}
             key={m.title}
-            onClick={() => setSelectedMenu(m.title)}
+            onClick={() => setSelectedMenu(m.link)}
           >
             <Image src={m.icon} alt={m.title} width={20} height={20} className="transition-transform duration-300 ease-in-out" />
           </button>

@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import profile from "@/constants/profile"
+import constants from "@/constants/main"
 import SocmedIcon from "./socmed-icon";
 
-const {fullname, job, country, socialMedia} = profile
+const {fullname, job, country, socialMedia} = constants
 
 export default function PersonalInfo() {
   return (

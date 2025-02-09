@@ -7,7 +7,7 @@ import Navbar from "@/components/navbar";
 const outfit = Outfit({subsets: ["latin"]});
 
 export const metadata: Metadata = {
-  title: "Muhammad Riwandi - Software Engineer",
+  title: "Muhammad Riwandi - Senior Software Engineer",
   description: "Personal website of Muhammad Riwandi",
 };
 

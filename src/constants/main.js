@@ -63,5 +63,37 @@ export default {
       width: 120,
       height: 30
     }
+  ],
+  menus: [
+    {
+      icon: 'https://img.icons8.com/?size=100&id=2797&format=png&color=F0F0F0',
+      title: 'Home',
+      link: '/',
+      isSelected: true
+    },
+    {
+      icon: 'https://img.icons8.com/?size=100&id=74359&format=png&color=F0F0F0',
+      title: 'Projects',
+      link: '/projects',
+      isSelected: false
+    },
+    {
+      icon: 'https://img.icons8.com/?size=100&id=12647&format=png&color=F0F0F0',
+      title: 'Skills',
+      link: '/skills',
+      isSelected: false
+    },
+    {
+      icon: 'https://img.icons8.com/?size=100&id=9489&format=png&color=F0F0F0',
+      title: 'Experience',
+      link: '/experience',
+      isSelected: false
+    },
+    {
+      icon: 'https://img.icons8.com/?size=100&id=60463&format=png&color=F0F0F0',
+      title: 'Education',
+      link: '/education',
+      isSelected: false
+    }
   ]
 }
