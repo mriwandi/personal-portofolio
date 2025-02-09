@@ -18,7 +18,7 @@ export default function Home () {
         with creative problem-solving to deliver robust, user-centric
         applications that drive business success.
       </p>
-      <div className='flex gap-20 w-[120px]'>
+      <div className='flex gap-20 w-[120px] text-white'>
         <div className='flex flex-col'>
           <span className='text-7xl font-bold'>+8</span>
           <span className='text-2xl text-zinc-400'>Years of Experience</span>
