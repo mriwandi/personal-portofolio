@@ -16,8 +16,8 @@ export default function PersonalInfo() {
         className="rounded-3xl"
       />
       <div className="flex flex-col items-center">
-        <span className="text-2xl font-bold">{fullname}</span>
-        <span className="text-lg text-zinc-400">{job}</span>
+        <span className="text-2xl font-bold text-center">{fullname}</span>
+        <span className="text-lg text-zinc-400 text-center">{job}</span>
         <span className="text-lg text-zinc-400">{country}</span>
       </div>
       <div className="flex gap-3">

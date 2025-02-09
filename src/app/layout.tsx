@@ -24,7 +24,7 @@ export default function RootLayout({
         <div className="flex justify-center mt-5">
           <Navbar />
         </div>
-        <main className="flex lg:flex-row flex-col gap-20 justify-center m-20 items-stretch">
+        <main className="flex lg:flex-row flex-col gap-20 justify-center my-20 m-[180px] items-stretch">
           <aside className="sticky top-20 max-h-full h-full mb-0 bg-zinc-800 lg:basis-1/4 md:basis-full rounded-2xl">
             <PersonalInfo />
           </aside>
